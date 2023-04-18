@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#listaplano_mouseClicked" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.PlanoController">
+   <children>
+      <ListView fx:id="listaplano" layoutX="14.0" layoutY="27.0" onKeyPressed="#listaplano_keyPressed" prefHeight="286.0" prefWidth="200.0" />
+      <Label layoutX="226.0" layoutY="43.0" text="Nome Plano" />
+      <TextField fx:id="Txtplano" layoutX="374.0" layoutY="38.0" />
+      <Button layoutX="495.0" layoutY="95.0" mnemonicParsing="false" onAction="#BtnCadastro_Click" text="Cadastro" />
+      <Button layoutX="149.0" layoutY="328.0" mnemonicParsing="false" onAction="#BtnExcluir_Click" text="Excluir" />
+   </children>
+</Pane>
