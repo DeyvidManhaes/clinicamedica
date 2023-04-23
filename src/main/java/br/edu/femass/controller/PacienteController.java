@@ -65,7 +65,6 @@ public class PacienteController implements Initializable {
         TxtEmail.setText(paciente.getEmail());
         TxtEndereco.setText(paciente.getEndereco());
         TxtProntuario.setText(paciente.getProntuario().toString());
-        TxtNome.setText(paciente.getNome());
         TxtTelefone.setText(paciente.getTelefones().get(0));
 
     }

@@ -23,22 +23,14 @@ public class Paciente {
     public Paciente(String nome, String cpf,String telefone){
 
         this.nome = nome;
-        if (Cpf.isCpf(cpf)==false){
-            throw new IllegalArgumentException("CPF Inválido");
-        }
-
         this.cpf = cpf;
-        this.nome = nome;
         this.telefones.add(telefone);
         this.ativo = true;
 
         this.prontuario = ultimoprontuario+1;
         ultimoprontuario ++;
     
-
-
     }
-
 
 
     public String getNome() {
@@ -50,8 +42,6 @@ public class Paciente {
     public String getCpf() {
         return cpf;
     }
-
-
 
     public Long getProntuario() {
         return prontuario;
