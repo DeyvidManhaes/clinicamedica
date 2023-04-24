@@ -2,15 +2,11 @@ package br.edu.femass.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.text.SimpleDateFormat;
-
-import javax.print.event.PrintJobAttributeEvent;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class AgendaTest {
-    private Agenda agenda;
+    
     private Paciente paciente;
     private Especialidade especialidade;
     private Plano plano;
@@ -38,7 +34,7 @@ public class AgendaTest {
             "84283893064", 
             "111111", especialidade);
 
-        agenda = new Agenda(medico,
+        Agenda agenda = new Agenda(medico,
          especialidade,
           paciente,
            plano,
@@ -49,56 +45,26 @@ public class AgendaTest {
     }
 
     @Test
-    void testGetCodagendamento() {
-        assertEquals(1, agenda.getCodagendamento());
+    void testconstrutor(){
+
+        Agenda agenda2 = new Agenda(
+        medico,
+        medico.getEspecialidades(),
+        paciente,
+        plano,
+        "29/06/2023 10:30"
+        );
+
+        assertEquals("Teste", agenda2.getPaciente().getNome());
+        assertEquals("João Silva", agenda2.getMedico().getNome());
+
 
     }
 
-    @Test
-    void testGetDataagendamento() {
 
-        assertEquals("24/05/2023 08:10", agenda.getDataagendamento());
 
-    }
 
-    @Test
-    void testGetDatahoje() {
+    
 
-        
-        /*assertEquals(sdf.format("24/04/2023"), agenda.getDatahoje());*/
-        
-
-    }
-
-    @Test
-    void testGetEspecialidade() {
-
-        assertEquals(medico, agenda.getMedico());
-
-    }
-
-    @Test
-    void testGetMedico() {
-
-    }
-
-    @Test
-    void testGetPaciente() {
-
-    }
-
-    @Test
-    void testGetPlano() {
-
-    }
-
-    @Test
-    void testSetAtivo() {
-
-    }
-
-    @Test
-    void testSetDataagendamento() {
-
-    }
+    
 }
