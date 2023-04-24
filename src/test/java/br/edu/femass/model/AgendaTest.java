@@ -17,7 +17,8 @@ public class AgendaTest {
         paciente = new Paciente(
             "Teste", 
             "02792655062", 
-            "22 99999-9991"
+            "22 99999-9991",
+            plano
         );
 
         especialidade = new Especialidade(

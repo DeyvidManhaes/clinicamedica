@@ -12,21 +12,29 @@ public class PacienteTest {
     
     @BeforeEach
     void setUp() {
+        Plano plano2 = new Plano(
+            "Sulamerica"
+        );
         paciente = new Paciente(
             "Teste", 
             "02792655062", 
-            "22 99999-9991"
+            "22 99999-9991",
+            plano2
         );
     } 
 
     @Test
     void construtorCpfIncorreto(){
+        Plano plano = new Plano(
+            "Bradesco Saude"
+        );
 
         assertThrows(
             IllegalArgumentException.class,() -> new Paciente(
                 "Teste2",
                 "123456789",
-                "22 99229-9922"
+                "22 99229-9922",
+                plano
                 )
         );
     }
@@ -55,7 +63,10 @@ public class PacienteTest {
 
     @Test
     void testAtualizarUltimoProntuario() {
-        paciente = new Paciente("Teste2","69625386009","22 98764-1234");
+        Plano plano = new Plano(
+            "Bradesco Saude"
+        );
+        paciente = new Paciente("Teste2","69625386009","22 98764-1234",plano);
         assertEquals(2, paciente.getProntuario());
 
     }

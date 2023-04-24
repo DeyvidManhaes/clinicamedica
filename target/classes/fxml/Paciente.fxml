@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.PacienteController">
-   <top>
+   <center>
       <Pane prefHeight="408.0" prefWidth="619.0" BorderPane.alignment="CENTER">
          <children>
             <ListView fx:id="listapaciente" layoutX="14.0" layoutY="39.0" onKeyPressed="#listapaciente_keyPressed" onMouseClicked="#listapaciente_mouseClicked" prefHeight="314.0" prefWidth="231.0" />
@@ -51,7 +51,9 @@
                </children>
             </GridPane>
             <Button layoutX="521.0" layoutY="281.0" mnemonicParsing="false" onAction="#BtnGravar_Click" text="Gravar" />
+            <ComboBox fx:id="CboPlano" layoutX="357.0" layoutY="250.0" prefWidth="150.0" />
+            <Label layoutX="260.0" layoutY="255.0" text="Plano Saude" />
          </children>
       </Pane>
-   </top>
+   </center>
 </BorderPane>

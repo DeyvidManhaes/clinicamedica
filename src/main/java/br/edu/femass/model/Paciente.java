@@ -13,6 +13,7 @@ public class Paciente {
     private List<String> telefones = new ArrayList<String>();
     private Boolean ativo;
     private String email;
+    private Plano planos;
 
     private static Long ultimoprontuario = 0L;
 
@@ -20,7 +21,7 @@ public class Paciente {
 
     }
 
-    public Paciente(String nome, String cpf,String telefone){
+    public Paciente(String nome, String cpf,String telefone,Plano plano){
 
         
         if (Cpf.isCpf(cpf)==false)throw new IllegalArgumentException("CPF Inválido");
@@ -28,6 +29,7 @@ public class Paciente {
         this.cpf= cpf;
         this.telefones.add(telefone);
         this.ativo = true;
+        this.planos = plano;
 
         this.prontuario = ultimoprontuario+1;
         ultimoprontuario ++;
@@ -40,6 +42,14 @@ public class Paciente {
     }
 
 
+
+    public void setPlanos(Plano planos) {
+        this.planos = planos;
+    }
+
+    public Plano getPlanos() {
+        return planos;
+    }
 
     public String getCpf() {
         return cpf;
