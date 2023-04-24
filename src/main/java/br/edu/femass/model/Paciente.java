@@ -8,7 +8,7 @@ import br.edu.femass.utils.Cpf;
 public class Paciente {
     private String nome;
     private String endereco;
-    private String cpf;
+    String cpf;
     private Long prontuario;
     private List<String> telefones = new ArrayList<String>();
     private Boolean ativo;

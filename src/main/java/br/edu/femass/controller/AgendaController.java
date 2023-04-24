@@ -5,6 +5,11 @@
 import java.util.ResourceBundle;
 
 import br.edu.femass.dao.AgendaDao;
+import br.edu.femass.dao.Dao;
+import br.edu.femass.dao.EspecialidadeDao;
+import br.edu.femass.dao.MedicoDao;
+import br.edu.femass.dao.PacienteDao;
+import br.edu.femass.dao.PlanoDao;
 import br.edu.femass.model.Agenda;
 import br.edu.femass.model.Especialidade;
 import br.edu.femass.model.Medico;
@@ -48,6 +53,11 @@ import javafx.scene.input.MouseEvent;
         private ListView<Agenda> listaagenda;
     
         private AgendaDao agendaDao = new AgendaDao();
+        private Dao<Especialidade> especialidadeDao = new EspecialidadeDao(); 
+        private Dao<Medico> medicoDao = new MedicoDao();
+        private Dao<Plano> planoDao = new PlanoDao();
+        private Dao<Paciente> pacienteDao = new PacienteDao();
+
     
     
         @FXML 
@@ -144,12 +154,63 @@ import javafx.scene.input.MouseEvent;
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-            
+
         }
+
+            public void exibirMedicos(){
+                try{
+                    ObservableList<Medico> data = FXCollections.observableArrayList(
+                        medicoDao.buscarAtivos()
+                    );
+                    CboMedico.setItems(data);
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+            public void exibirPacientes(){
+                try{
+                    ObservableList<Paciente> data = FXCollections.observableArrayList(
+                        pacienteDao.buscarAtivos()
+                    );
+                    CboPaciente.setItems(data);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+            public void exibirEspecialidade(){
+                try{
+                    ObservableList<Especialidade> data = FXCollections.observableArrayList(
+                        especialidadeDao.buscarAtivos()
+                    );
+                    CboEspecialidade.setItems(data);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+            public void exibirPlano(){
+                try{
+                    ObservableList<Plano> data = FXCollections.observableArrayList(
+                        planoDao.buscarAtivos()
+                    );
+                    CboPlano.setItems(data);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+            
+        
     
      
     public void initialize(URL location, ResourceBundle resource){
         exibirAgenda();
+        exibirMedicos();
+        exibirEspecialidade();
+        exibirPacientes();
+        exibirPlano();
+
        }
     
     }

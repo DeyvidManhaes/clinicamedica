@@ -59,5 +59,6 @@ public class MedicoDao extends Persist implements Dao<Medico>{
                 .collect(Collectors.toList());
 
         return medicosAtivos;    }
+
     
 }

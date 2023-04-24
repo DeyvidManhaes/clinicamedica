@@ -129,7 +129,7 @@ public class Medico {
 
     @Override
     public String toString() {
-        return this.nome;
+        return "Nome: "+ this.nome + "Especialidade: " + this.especialidades;
     }
 
     
@@ -138,7 +138,7 @@ public class Medico {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((CRM == null) ? 0 : CRM.hashCode());
+        result = prime * result + ((cpf== null) ? 0 : cpf.hashCode());
         return result;
     }
 
@@ -150,11 +150,11 @@ public class Medico {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Medico other = (Medico) obj;
-        if (CRM == null) {
-            if (other.CRM != null)
+        Paciente other = (Paciente) obj;
+        if (cpf == null) {
+            if (other.cpf != null)
                 return false;
-        } else if (!CRM.equals(other.CRM))
+        } else if (!cpf.equals(other.cpf))
             return false;
         return true;
     }

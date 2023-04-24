@@ -3,6 +3,7 @@ package br.edu.femass.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import br.edu.femass.dao.Dao;
 import br.edu.femass.dao.EspecialidadeDao;
 import br.edu.femass.dao.MedicoDao;
 import br.edu.femass.utils.DiversosJavaFx;
@@ -41,12 +42,14 @@ public class MedicoController implements Initializable {
     
     @FXML
     private ComboBox<Especialidade> CboEspecialidade;
-    private EspecialidadeDao especialidadeDao;
+    
 
     @FXML
-    private ListView<Medico> listamedico;
+    private ListView<Medico> listaMedico;
 
+    private Dao<Especialidade> especialidadeDao = new EspecialidadeDao(); 
     private MedicoDao medicoDao = new MedicoDao();
+    
 
 
     @FXML 
@@ -63,7 +66,7 @@ public class MedicoController implements Initializable {
      * 
      */
     private void exibirDados() {
-        Medico medico = listamedico.getSelectionModel().getSelectedItem();
+        Medico medico = listaMedico.getSelectionModel().getSelectedItem();
         if (medico==null) return;
 
         TxtCpf.setText(medico.getCpf());
@@ -78,7 +81,7 @@ public class MedicoController implements Initializable {
 
     @FXML
     private void BtnExcluir_Click(ActionEvent event) {
-        Medico medico = listamedico.getSelectionModel().getSelectedItem();
+        Medico medico = listaMedico.getSelectionModel().getSelectedItem();
         if (medico==null) return;
 
         try {
@@ -121,10 +124,8 @@ public class MedicoController implements Initializable {
             CboEspecialidade.getSelectionModel().select(null);
             TxtEmail.setText("");
             TxtEndereco.setText("");
+             exibirMedicos();
 
-
-
-            exibirMedicos();   
         } catch (Exception e) {
             DiversosJavaFx.exibirMensagem(e.getMessage());
         }
@@ -136,16 +137,27 @@ public class MedicoController implements Initializable {
         ObservableList<Medico> data = FXCollections.observableArrayList(
             medicoDao.buscarAtivos()
         );
-        listamedico.setItems(data);
+        listaMedico.setItems(data);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         
     }
+    public void exibirEspecialidades() {
+        try {
+            ObservableList<Especialidade> data = FXCollections.observableArrayList(
+            especialidadeDao.buscarAtivos()
+            );
+            CboEspecialidade.setItems(data);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }        
+    }
 
  
 public void initialize(URL location, ResourceBundle resource){
     exibirMedicos();
+    exibirEspecialidades();
    }
 
 }

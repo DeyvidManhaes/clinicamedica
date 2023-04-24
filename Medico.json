@@ -1,0 +1,13 @@
+[ {
+  "nome" : "Joao Pedro",
+  "endereco" : "Rua Pessanha",
+  "cpf" : "63341492020",
+  "telefones" : [ "22 98762-1234" ],
+  "ativo" : true,
+  "email" : "joaop@medico.com",
+  "especialidades" : {
+    "nome" : "Cardiologia",
+    "ativo" : true
+  },
+  "crm" : "54345"
+} ]

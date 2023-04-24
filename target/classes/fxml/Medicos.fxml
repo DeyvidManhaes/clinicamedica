@@ -19,7 +19,6 @@
    <top>
       <Pane prefHeight="408.0" prefWidth="619.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="listamedico" layoutX="14.0" layoutY="39.0" onKeyPressed="#listamedico_keyPressed" onMouseClicked="#listamedico_mouseClicked" prefHeight="314.0" prefWidth="231.0" />
             <Button layoutX="182.0" layoutY="363.0" mnemonicParsing="false" onAction="#BtnExcluir_Click" text="Excluir" />
             <GridPane layoutX="261.0" layoutY="31.0" prefHeight="239.0" prefWidth="302.0">
               <columnConstraints>
@@ -54,6 +53,7 @@
                </children>
             </GridPane>
             <Button layoutX="521.0" layoutY="281.0" mnemonicParsing="false" onAction="#BtnGravar_Click" text="Gravar" />
+            <ListView fx:id="listaMedico" layoutX="14.0" layoutY="23.0" onKeyPressed="#listamedico_keyPressed" onMouseClicked="#listamedico_mouseClicked" prefHeight="285.0" prefWidth="230.0" />
          </children>
       </Pane>
    </top>
