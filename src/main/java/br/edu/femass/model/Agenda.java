@@ -11,7 +11,7 @@ public class Agenda {
     private Paciente paciente;
     private Plano plano;
     private String datahoje;
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm ");
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm ");
     private String dateagendamento;
     private Boolean ativo;
 
