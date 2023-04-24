@@ -4,12 +4,12 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.EspecialidadeController">
    <children>
-      <Button layoutX="480.0" layoutY="129.0" mnemonicParsing="false" text="Gravar" />
+      <Button layoutX="480.0" layoutY="129.0" mnemonicParsing="false" onAction="#BtnGravar_Click2" text="Gravar" />
       <TextField fx:id="Txtespecialidade" layoutX="368.0" layoutY="77.0" />
       <ListView fx:id="listaespecialidade" layoutX="27.0" layoutY="29.0" onKeyPressed="#listaespecialidade_keyPressed" onMouseClicked="#listaespecialidade_mouseClicked" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="172.0" layoutY="243.0" mnemonicParsing="false" text="Excluir" />
+      <Button layoutX="172.0" layoutY="243.0" mnemonicParsing="false" onAction="#BtnExcluir_Click2" text="Excluir" />
       <Label layoutX="265.0" layoutY="82.0" text="Especialidade" />
    </children>
 </Pane>

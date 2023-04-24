@@ -13,6 +13,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 public class PlanoController implements Initializable{
  
@@ -24,8 +26,27 @@ public class PlanoController implements Initializable{
 
     private PlanoDao planoDao = new PlanoDao();
 
+    @FXML 
+    private void listaplano_keyPressed(KeyEvent event) {
+        exibirDados();
+    }
+
+    @FXML 
+    private void listaplano_mouseClicked(MouseEvent event) {
+        exibirDados();
+    }
+
+    private void exibirDados(){
+        Plano plano = listaplano.getSelectionModel().getSelectedItem();
+        if(plano == null) return;
+
+        Txtplano.setText(plano.getNomeplano());
+    }
+
+
+
     @FXML
-    private void BtnExcluir_Click (ActionEvent event){
+    private void BtnExcluir_Click2 (ActionEvent event){
 
         Plano plano = listaplano.getSelectionModel().getSelectedItem();
         if (plano==null) return;
@@ -41,13 +62,13 @@ public class PlanoController implements Initializable{
     }
 
     @FXML
-    private void BtnCadastrar_Click(ActionEvent event){
+    private void BtnGravar_Click2(ActionEvent event){
 
         try{
             Plano plano = new Plano(
                             Txtplano.getText());
                 if(planoDao.gravar(plano)==false){
-                    DiversosJavaFx.exibirMensagem("Não foi possível cadastrar plano de saúde");
+                    DiversosJavaFx.exibirMensagem("Não foi possível gravar Plano de Saúde");
                     return;
                 }
 
@@ -70,7 +91,7 @@ public class PlanoController implements Initializable{
     }
       
     
-    public void initialize (URL location, ResourceBundle resources){
+    public void initialize (URL location, ResourceBundle rb){
         exibirPlano();
     }
 }

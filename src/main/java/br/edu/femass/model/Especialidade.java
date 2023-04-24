@@ -36,12 +36,21 @@ public Boolean getAtivo() {
 public void setAtivo(Boolean ativo) {
     this.ativo = ativo;
 }
+
+
+
 /*public Especialidade get(int index) {
     for (Especialidade sym : scope.getEspecialidade(NON_RECURSIVE)) {
         if (!unwanted(sym) && (index-- == 0))
             return sym;
     }
     throw new IndexOutOfBoundsException();
+}
+
+
+
+private boolean unwanted(Especialidade sym) {
+    return false;
 }*/
   
 }

@@ -1,0 +1,25 @@
+[ {
+  "nome" : "Ginecologia",
+  "ativo" : true
+}, {
+  "nome" : "Oftalmologia",
+  "ativo" : true
+}, {
+  "nome" : "Angiologia",
+  "ativo" : true
+}, {
+  "nome" : "Ortopedia",
+  "ativo" : true
+}, {
+  "nome" : "Neurologia",
+  "ativo" : true
+}, {
+  "nome" : "Psicologia",
+  "ativo" : true
+}, {
+  "nome" : "Clinico Geral",
+  "ativo" : true
+}, {
+  "nome" : "Cardiologia",
+  "ativo" : true
+} ]

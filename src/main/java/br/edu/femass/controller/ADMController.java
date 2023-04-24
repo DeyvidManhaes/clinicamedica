@@ -33,7 +33,7 @@ public class ADMController implements Initializable {
     @FXML
     private void ClickButton_Plan(ActionEvent event){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/PlanoSaude.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Plano.fxml"));
 
             Scene scene = new Scene(root);
             Stage stage = new Stage();

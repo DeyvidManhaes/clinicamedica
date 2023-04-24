@@ -3,6 +3,7 @@ package br.edu.femass.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import br.edu.femass.dao.EspecialidadeDao;
 import br.edu.femass.dao.MedicoDao;
 import br.edu.femass.utils.DiversosJavaFx;
 import br.edu.femass.model.Especialidade;
@@ -40,6 +41,7 @@ public class MedicoController implements Initializable {
     
     @FXML
     private ComboBox<Especialidade> CboEspecialidade;
+    private EspecialidadeDao especialidadeDao;
 
     @FXML
     private ListView<Medico> listamedico;

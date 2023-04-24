@@ -1,0 +1,9 @@
+[ {
+  "nome" : "Joao",
+  "endereco" : "Rua A",
+  "cpf" : "14115097736",
+  "prontuario" : 1,
+  "telefones" : [ "22 99992-1234" ],
+  "ativo" : true,
+  "email" : "joao@gmail.com"
+} ]

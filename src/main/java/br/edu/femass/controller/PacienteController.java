@@ -61,6 +61,8 @@ public class PacienteController implements Initializable {
         Paciente paciente  = listapaciente.getSelectionModel().getSelectedItem();
         if (paciente==null) return;
 
+
+        TxtNome.setText(paciente.getNome());
         TxtCpf.setText(paciente.getCpf());
         TxtEmail.setText(paciente.getEmail());
         TxtEndereco.setText(paciente.getEndereco());
@@ -90,8 +92,9 @@ public class PacienteController implements Initializable {
     private void BtnGravar_Click(ActionEvent event) {
         try {
             Paciente paciente = new Paciente(
-                    TxtCpf.getText(),
+                    
                     TxtNome.getText(),
+                    TxtCpf.getText(),
                     TxtTelefone.getText());
             paciente.setEmail(TxtEmail.getText());
             paciente.setEndereco(TxtEndereco.getText());
@@ -102,13 +105,14 @@ public class PacienteController implements Initializable {
                 DiversosJavaFx.exibirMensagem("Não foi possível gravar o cliente");
                 return;
             }
-
+            TxtNome.setText("");
             TxtCpf.setText("");
+            TxtTelefone.setText("");
             TxtEmail.setText("");
             TxtEndereco.setText("");
             TxtProntuario.setText("");
-            TxtNome.setText("");
-            TxtTelefone.setText("");
+            
+            
 
 
             exibirPacientes();   

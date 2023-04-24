@@ -13,7 +13,7 @@ public class Medico {
     private List<String> telefones = new ArrayList<String>();
     private Boolean ativo;
     private String email;
-    private List<Especialidade> especialidades = new ArrayList<Especialidade>();
+    private Especialidade especialidades;
 
     public Medico(){
 
@@ -29,7 +29,7 @@ public class Medico {
         this.cpf = cpf;
         this.nome = nome;
         this.CRM = CRM;
-        this.especialidades.add(especialidade);
+        this.especialidades = especialidade;
 
 
         this.telefones.add(telefone);
@@ -42,10 +42,10 @@ public class Medico {
 
 
     public Especialidade getEspecialidades() {
-        return (Especialidade) especialidades;
+        return especialidades;
     }
 
-    public void adicionarEspecialidade (Especialidade especialidade) throws Exception {
+    /*public void adicionarEspecialidade (Especialidade especialidade) throws Exception {
         
         this.especialidades.add(especialidade);
     }
@@ -55,7 +55,7 @@ public class Medico {
             throw new Exception("O Médico tem que ter pelo menos uma especialidade");
         }
         this.especialidades.remove(especialidade);
-    }
+    }*/
 
    
 
