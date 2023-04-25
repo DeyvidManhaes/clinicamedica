@@ -44,7 +44,7 @@ public class LoginController implements Initializable{
 
         }
         if(usuario.equals("recepcao") && Senha1.equals("12345")){
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/recep.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Recepcao.fxml"));
             Scene scene = new Scene(root);
             Stage stage = new Stage();
     
