@@ -1,0 +1,13 @@
+[ {
+  "nome" : "Joao",
+  "endereco" : "Rua p",
+  "cpf" : "63341492020",
+  "prontuario" : 1,
+  "telefones" : [ "122323" ],
+  "ativo" : true,
+  "email" : "joao@joao",
+  "planos" : {
+    "nomeplano" : "Unimed",
+    "ativo" : true
+  }
+} ]

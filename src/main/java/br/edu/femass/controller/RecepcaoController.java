@@ -15,6 +15,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class RecepcaoController implements Initializable {
@@ -38,6 +40,16 @@ public class RecepcaoController implements Initializable {
                 ex.printStackTrace();
             }
             
+        }
+
+        @FXML 
+        private void press_list_keyPressed(KeyEvent event) {
+            //exibirDados();
+        }
+    
+        @FXML 
+        private void press_list_mouseclicked(MouseEvent event) {
+            //exibirDados();
         }
 
     @FXML

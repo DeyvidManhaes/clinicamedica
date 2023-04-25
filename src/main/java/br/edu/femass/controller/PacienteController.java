@@ -40,6 +40,7 @@ public class PacienteController implements Initializable {
     @FXML
     private TextField TxtTelefone;
 
+    @FXML
     private ComboBox<Plano> CboPlano;
 
     @FXML
