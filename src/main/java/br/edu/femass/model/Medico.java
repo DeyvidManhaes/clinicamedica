@@ -129,7 +129,7 @@ public class Medico {
 
     @Override
     public String toString() {
-        return "Nome: "/*+ this.nome + "Especialidade: " + this.especialidades*/;
+        return "Nome: "+ this.nome + "Especialidade: " + this.especialidades;
     }
 
     @Override

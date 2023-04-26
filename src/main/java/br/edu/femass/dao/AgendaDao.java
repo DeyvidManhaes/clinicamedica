@@ -1,6 +1,6 @@
 package br.edu.femass.dao;
 
-    import java.io.IOException;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -59,5 +59,21 @@ public class AgendaDao extends Persist implements Dao<Agenda>{
                 .collect(Collectors.toList());
 
         return agendasAtivas;    }
+
+        /*@Override
+             * public List<Agenda> buscarEspecialidade(Especialidade especialidade) throws DatabindException{
+             * Set<Agenda> agendas = buscar();
+             * 
+             * List<Agenda> medicosespecialistas = agendas
+             * .stream()
+             * .filter(medico -> agenda.getMedico().getEspecialidade().equals(especialidade))
+             * .collect(Collectors.toList());
+             * 
+             * return medicoespecialistas;
+             * 
+             * 
+             *  }
+             *
+             */
     
 }

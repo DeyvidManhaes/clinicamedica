@@ -12,5 +12,7 @@ public interface Dao<T>{
     public boolean excluir (T objeto) throws StreamWriteException, IOException;
     public Set<T> buscar() throws DatabindException;
     public List<T> buscarAtivos() throws DatabindException;
+    /*public List<T> buscarEspecialidade(T objeto) throws DatabindException; */
+
     
 }
