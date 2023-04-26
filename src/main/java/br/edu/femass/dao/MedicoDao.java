@@ -18,7 +18,7 @@ public class MedicoDao extends Persist implements Dao<Medico>{
         super("Medico.json");
     }
 
-    @Override
+    
     public boolean gravar(Medico objeto) throws StreamWriteException, IOException {
         Set<Medico> medicos = buscar();
         boolean gravou = medicos.add(objeto);
@@ -27,7 +27,7 @@ public class MedicoDao extends Persist implements Dao<Medico>{
         return gravou;
     }
 
-    @Override
+    
     public boolean excluir(Medico objeto) throws StreamWriteException, IOException {
         Set<Medico> medicos = buscar();
         for (Medico medicoSelecionado : medicos) {
@@ -39,7 +39,7 @@ public class MedicoDao extends Persist implements Dao<Medico>{
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(arquivo, medicos);
         return true;    }
 
-    @Override
+    
     public Set<Medico> buscar() throws DatabindException {
         try {
             Set<Medico> medicos = objectMapper.readValue(arquivo, new TypeReference<Set<Medico>>() {
@@ -49,7 +49,7 @@ public class MedicoDao extends Persist implements Dao<Medico>{
             return new HashSet<Medico>();
         }    }
 
-    @Override
+    
     public List<Medico> buscarAtivos() throws DatabindException {
         Set<Medico> medicos = buscar();
 

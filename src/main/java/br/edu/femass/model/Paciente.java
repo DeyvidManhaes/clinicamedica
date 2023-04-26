@@ -155,6 +155,10 @@ public class Paciente {
             }
         }
     }
+
+    public Object getNomeplano() {
+        return null;
+    }
     
 
 }

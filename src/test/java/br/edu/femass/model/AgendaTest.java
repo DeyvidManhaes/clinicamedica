@@ -52,12 +52,13 @@ public class AgendaTest {
         medico,
         medico.getEspecialidades(),
         paciente,
-        plano,
+        paciente.getPlanos(),
         "29/06/2023 10:30"
         );
 
         assertEquals("Teste", agenda2.getPaciente().getNome());
         assertEquals("João Silva", agenda2.getMedico().getNome());
+        assertEquals("Bradesco Saude", agenda2.getPaciente().getNomeplano());
 
 
     }

@@ -1,13 +1,27 @@
 [ {
-  "nome" : "Fernando Henrique",
-  "endereco" : "Rua H",
-  "cpf" : "73308446081",
-  "telefones" : [ "22 98123-5432" ],
+  "nome" : "Luiz Guilherme",
+  "endereco" : "Rua G",
+  "cpf" : "35524345001",
+  "telefones" : [ "21 45678999" ],
   "ativo" : true,
-  "email" : "FernandoH@medico.com",
+  "email" : "lg@medico.com",
   "especialidades" : {
-    "nome" : "Neurologia",
+    "nome" : "Endocrinologia",
     "ativo" : true
   },
-  "crm" : "54321"
-} ]
+  "crm" : "23456"
+},{
+  "nome" : "Guilherme Jr",
+  "endereco" : "Rua C",
+  "cpf" : "65531006080",
+  "telefones" : [ "28 45678999" ],
+  "ativo" : true,
+  "email" : "GJ@medico.com",
+  "especialidades" : {
+    "nome" : "Ortopedista",
+    "ativo" : true
+  },
+  "crm" : "87654"
+
+}
+ ]

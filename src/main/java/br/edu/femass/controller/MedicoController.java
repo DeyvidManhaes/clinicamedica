@@ -48,7 +48,7 @@ public class MedicoController implements Initializable {
     private ListView<Medico> listaMedico;
 
     private Dao<Especialidade> especialidadeDao = new EspecialidadeDao(); 
-    private MedicoDao medicoDao = new MedicoDao();
+    private Dao<Medico> medicoDao = new MedicoDao();
     
 
 
@@ -61,10 +61,25 @@ public class MedicoController implements Initializable {
     private void listamedico_mouseClicked(MouseEvent event) {
         exibirDados();
     }
+    @FXML
+    private void Mouse_Clickedout(KeyEvent event){
+      /* try{*/
+        TxtNome.setText("");
+        TxtCRM.setText("");
+        TxtCpf.setText("");
+        TxtTelefone.setText("");
+        CboEspecialidade.getSelectionModel().select(null);
+        TxtEmail.setText("");
+        TxtEndereco.setText("");
+        
+        
+    /*} catch (Exception e) {
+        DiversosJavaFx.exibirMensagem(e.getMessage());
+    }*/
+    }
 
-    /**
-     * 
-     */
+
+   
     private void exibirDados() {
         Medico medico = listaMedico.getSelectionModel().getSelectedItem();
         if (medico==null) return;

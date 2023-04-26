@@ -3,7 +3,6 @@ package br.edu.femass.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import br.edu.femass.dao.Dao;
 import br.edu.femass.dao.PacienteDao;
 import br.edu.femass.dao.PlanoDao;
 import br.edu.femass.utils.DiversosJavaFx;

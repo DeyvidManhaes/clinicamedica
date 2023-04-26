@@ -22,4 +22,7 @@
 }, {
   "nome" : "Angiologia",
   "ativo" : false
+}, {
+  "nome" : "Endocrinologia",
+  "ativo" : true
 } ]

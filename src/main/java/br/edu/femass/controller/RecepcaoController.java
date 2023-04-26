@@ -73,7 +73,7 @@ public class RecepcaoController implements Initializable {
     @FXML
     private void  BtnMedicoClick (ActionEvent event){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Medicos.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Medico.fxml"));
 
             Scene scene = new Scene(root);
             Stage stage = new Stage();

@@ -10,4 +10,16 @@
     "nomeplano" : "Unimed",
     "ativo" : true
   }
+}, {
+  "nome" : "Pedro ",
+  "endereco" : "Rua A",
+  "cpf" : "70123435080",
+  "prontuario" : 2,
+  "telefones" : [ "32 98123-4567" ],
+  "ativo" : true,
+  "email" : "Pedro@pedro.com",
+  "planos" : {
+    "nomeplano" : "Unimed",
+    "ativo" : true
+  }
 } ]

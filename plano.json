@@ -5,11 +5,17 @@
   "nomeplano" : "Amil",
   "ativo" : true
 }, {
+  "nomeplano" : "Porto Seguro",
+  "ativo" : true
+}, {
   "nomeplano" : "Bradesco Saude",
   "ativo" : true
 }, {
   "nomeplano" : "SulAmerica",
   "ativo" : true
+}, {
+  "nomeplano" : "One Health",
+  "ativo" : false
 }, {
   "nomeplano" : "Assim",
   "ativo" : true
