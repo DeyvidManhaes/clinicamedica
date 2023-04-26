@@ -1,13 +1,25 @@
 [ {
-  "nome" : "Maria Silva",
+  "nome" : "Joao R",
+  "crm" : "7654",
   "endereco" : "Rua L",
-  "cpf" : "58537920088",
-  "telefones" : [ "111111111" ],
+  "cpf" : "96321874078",
+  "telefones" : [ "1111111" ],
   "ativo" : true,
-  "email" : "MSilva@medico.com",
+  "email" : "joaor@medico",
   "especialidades" : {
     "nome" : "Neurologia",
     "ativo" : true
-  },
-  "crm" : "12345"
+  }
+}, {
+  "nome" : "Maria Silva ",
+  "crm" : "7654",
+  "endereco" : "Rua A",
+  "cpf" : "10388469005",
+  "telefones" : [ "32 4545454" ],
+  "ativo" : true,
+  "email" : "maria@medico.com",
+  "especialidades" : {
+    "nome" : "Psicologia",
+    "ativo" : true
+  }
 } ]

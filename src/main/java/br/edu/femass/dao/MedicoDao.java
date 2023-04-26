@@ -45,6 +45,7 @@ public class MedicoDao extends Persist implements Dao<Medico> {
                 
                 return medicos;
             } catch (IOException ex) {
+                ex.printStackTrace();
                 return new HashSet<Medico>();
             }
         }

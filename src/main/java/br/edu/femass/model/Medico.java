@@ -7,7 +7,7 @@ import br.edu.femass.utils.Cpf;
 
 public class Medico {
     private String nome;
-    private String CRM;
+    private String crm;
     private String endereco;
     private String cpf;
     private List<String> telefones = new ArrayList<String>();
@@ -19,7 +19,7 @@ public class Medico {
 
     }
 
-    public Medico(String nome, String CRM, String cpf,String telefone, Especialidade especialidade){
+    public Medico(String nome, String crm, String cpf,String telefone, Especialidade especialidade){
 
         this.nome = nome;
         if (Cpf.isCpf(cpf)==false){
@@ -28,7 +28,7 @@ public class Medico {
 
         this.cpf = cpf;
         this.nome = nome;
-        this.CRM = CRM;
+        this.crm = crm;
         this.especialidades = especialidade;
 
 
@@ -71,8 +71,8 @@ public class Medico {
 
 
 
-    public String getCRM() {
-        return CRM;
+    public String getCrm() {
+        return crm;
     }
 
     public List<String> getTelefones() {
@@ -136,7 +136,7 @@ public class Medico {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((CRM == null) ? 0 : CRM.hashCode());
+        result = prime * result + ((crm == null) ? 0 : crm.hashCode());
         result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
         return result;
     }
@@ -150,10 +150,10 @@ public class Medico {
         if (getClass() != obj.getClass())
             return false;
         Medico other = (Medico) obj;
-        if (CRM == null) {
-            if (other.CRM != null)
+        if (crm == null) {
+            if (other.crm != null)
                 return false;
-        } else if (!CRM.equals(other.CRM))
+        } else if (!crm.equals(other.crm))
             return false;
         if (cpf == null) {
             if (other.cpf != null)

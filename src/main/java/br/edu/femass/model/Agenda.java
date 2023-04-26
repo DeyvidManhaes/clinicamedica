@@ -33,7 +33,7 @@ public class Agenda {
         this.paciente = paciente;
         this.plano = plano;
         this.datahoje = sdf.format(new Date());
-        this.dateagendamento = sdf.format(dateagendamento);
+        this.dateagendamento = dateagendamento;
         this.ativo = true;
 
         this.codagendamento = ultimocod + 1;

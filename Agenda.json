@@ -1,0 +1,41 @@
+[ {
+  "codagendamento" : 1,
+  "medico" : {
+    "nome" : "Joao R",
+    "crm" : "7654",
+    "endereco" : "Rua L",
+    "cpf" : "96321874078",
+    "telefones" : [ "1111111" ],
+    "ativo" : true,
+    "email" : "joaor@medico",
+    "especialidades" : {
+      "nome" : "Neurologia",
+      "ativo" : true
+    }
+  },
+  "especialidade" : {
+    "nome" : "Neurologia",
+    "ativo" : true
+  },
+  "paciente" : {
+    "nome" : "Joao",
+    "endereco" : "Rua p",
+    "cpf" : "63341492020",
+    "prontuario" : 1,
+    "telefones" : [ "122323" ],
+    "ativo" : true,
+    "email" : "joao@joao",
+    "planos" : {
+      "nomeplano" : "Unimed",
+      "ativo" : true
+    },
+    "nomeplano" : null
+  },
+  "plano" : {
+    "nomeplano" : "Porto Seguro",
+    "ativo" : true
+  },
+  "datahoje" : "26/04/2023 20:38 ",
+  "ativo" : true,
+  "dataagendamento" : "24/05/2023 08:20"
+} ]

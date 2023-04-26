@@ -70,7 +70,7 @@ public class MedicoController implements Initializable {
         TxtCpf.setText(medico.getCpf());
         TxtEmail.setText(medico.getEmail());
         TxtEndereco.setText(medico.getEndereco());
-        TxtCRM.setText(medico.getCRM().toString());
+        TxtCRM.setText(medico.getCrm().toString());
         TxtTelefone.setText(medico.getTelefones().get(0));
         CboEspecialidade.getSelectionModel().select(medico.getEspecialidades());
     }
