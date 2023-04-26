@@ -89,6 +89,31 @@ public class Agenda {
         this.plano = plano;
     }
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((codagendamento == null) ? 0 : codagendamento.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Agenda other = (Agenda) obj;
+        if (codagendamento == null) {
+            if (other.codagendamento != null)
+                return false;
+        } else if (!codagendamento.equals(other.codagendamento))
+            return false;
+        return true;
+    }
+
     public String getDataagendamento() {
         return dateagendamento;
     }

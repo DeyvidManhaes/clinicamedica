@@ -79,7 +79,10 @@ import javafx.scene.input.MouseEvent;
             CboPaciente.getSelectionModel().select(agenda.getPaciente());
             CboPlano.getSelectionModel().select(agenda.getPlano());
             CboMedico.getSelectionModel().select(agenda.getMedico());
-            CboEspecialidade.getSelectionModel().select(agenda.getEspecialidade());
+            if(CboMedico.getSelectionModel().getSelectedItem()== null){
+                CboEspecialidade.getSelectionModel().select(agenda.getEspecialidade());
+            }
+            CboEspecialidade.getSelectionModel().select(agenda.getMedico().getEspecialidades());
             TxtDataagend.setUserData(agenda.getDatahoje());
             TxtDateconsult.setText(agenda.getDataagendamento());
             

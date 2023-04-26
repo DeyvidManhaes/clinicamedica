@@ -1,27 +1,13 @@
 [ {
-  "nome" : "Luiz Guilherme",
-  "endereco" : "Rua G",
-  "cpf" : "35524345001",
-  "telefones" : [ "21 45678999" ],
+  "nome" : "Felipe",
+  "endereco" : "Rua P",
+  "cpf" : "37724915024",
+  "telefones" : [ "22 98765-1234" ],
   "ativo" : true,
-  "email" : "lg@medico.com",
+  "email" : "felipe@medico.com",
   "especialidades" : {
-    "nome" : "Endocrinologia",
+    "nome" : "Ortopedia",
     "ativo" : true
   },
-  "crm" : "23456"
-},{
-  "nome" : "Guilherme Jr",
-  "endereco" : "Rua C",
-  "cpf" : "65531006080",
-  "telefones" : [ "28 45678999" ],
-  "ativo" : true,
-  "email" : "GJ@medico.com",
-  "especialidades" : {
-    "nome" : "Ortopedista",
-    "ativo" : true
-  },
-  "crm" : "87654"
-
-}
- ]
+  "crm" : "9876"
+} ]
