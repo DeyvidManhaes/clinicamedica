@@ -12,53 +12,57 @@ import com.fasterxml.jackson.databind.DatabindException;
 
 import br.edu.femass.model.Medico;
 
-public class MedicoDao extends Persist implements Dao<Medico>{
+public class MedicoDao extends Persist implements Dao<Medico> {
 
-    public MedicoDao() {
-        super("Medico.json");
-    }
-
+        public MedicoDao() {
+            super("Medico.json");
+        }
+        public boolean gravar(Medico objeto) throws StreamWriteException, IOException {
+            Set<Medico> medicos = buscar();
+            boolean gravou = medicos.add(objeto);
     
-    public boolean gravar(Medico objeto) throws StreamWriteException, IOException {
-        Set<Medico> medicos = buscar();
-        boolean gravou = medicos.add(objeto);
-
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(arquivo, medicos);
-        return gravou;
-    }
-
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(arquivo, medicos);
+            return gravou;
+        }
     
-    public boolean excluir(Medico objeto) throws StreamWriteException, IOException {
-        Set<Medico> medicos = buscar();
-        for (Medico medicoSelecionado : medicos) {
-            if (medicoSelecionado.equals(objeto)) {
-                medicoSelecionado.setativo(false);
+        public boolean excluir(Medico objeto) throws StreamWriteException, IOException {
+            Set<Medico> medicos = buscar();
+            for (Medico medicoSelecionado : medicos) {
+                if (medicoSelecionado.equals(objeto)) {
+                    medicoSelecionado.setativo(false);
+                }
+            }
+    
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(arquivo, medicos);
+            return true;
+        }
+    
+        public Set<Medico> buscar() throws DatabindException {
+            try {
+                Set<Medico> medicos = objectMapper.readValue(arquivo, new TypeReference<Set<Medico>>() {
+                });
+                
+                return medicos;
+            } catch (IOException ex) {
+                return new HashSet<Medico>();
             }
         }
-
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(arquivo, medicos);
-        return true;    }
-
+       
+        
+        @Override
+        public List<Medico> buscarAtivos() throws DatabindException {
+            Set<Medico> medicos = buscar();
     
-    public Set<Medico> buscar() throws DatabindException {
-        try {
-            Set<Medico> medicos = objectMapper.readValue(arquivo, new TypeReference<Set<Medico>>() {
-            });
-            return medicos;
-        } catch (IOException ex) {
-            return new HashSet<Medico>();
-        }    }
-
+            List<Medico> medicosAtivos = medicos
+            .stream()
+            .filter(medico -> medico.getativo().equals(true))
+            .collect( Collectors.toList());
+            return medicosAtivos;
+            
+        }
+        
     
-    public List<Medico> buscarAtivos() throws DatabindException {
-        Set<Medico> medicos = buscar();
-
-        List<Medico> medicosAtivos = medicos
-                .stream()
-                .filter(medico -> medico.getativo().equals(true))
-                .collect(Collectors.toList());
-
-        return medicosAtivos;    }
-
+        
     
-}
+    }
+

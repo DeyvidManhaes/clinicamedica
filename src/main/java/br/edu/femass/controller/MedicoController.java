@@ -3,12 +3,11 @@ package br.edu.femass.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import br.edu.femass.dao.Dao;
 import br.edu.femass.dao.EspecialidadeDao;
 import br.edu.femass.dao.MedicoDao;
-import br.edu.femass.utils.DiversosJavaFx;
 import br.edu.femass.model.Especialidade;
 import br.edu.femass.model.Medico;
+import br.edu.femass.utils.DiversosJavaFx;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -39,18 +38,15 @@ public class MedicoController implements Initializable {
 
     @FXML
     private TextField TxtTelefone;
-    
+
     @FXML
     private ComboBox<Especialidade> CboEspecialidade;
-    
 
     @FXML
     private ListView<Medico> listaMedico;
 
-    private Dao<Especialidade> especialidadeDao = new EspecialidadeDao(); 
-    private Dao<Medico> medicoDao = new MedicoDao();
-    
-
+    private MedicoDao medicoDao = new MedicoDao();
+    private EspecialidadeDao especialidadeDao = new EspecialidadeDao();
 
     @FXML 
     private void listamedico_keyPressed(KeyEvent event) {
@@ -61,47 +57,32 @@ public class MedicoController implements Initializable {
     private void listamedico_mouseClicked(MouseEvent event) {
         exibirDados();
     }
-    @FXML
-    private void Mouse_Clickedout(KeyEvent event){
-      /* try{*/
-        TxtNome.setText("");
-        TxtCRM.setText("");
-        TxtCpf.setText("");
-        TxtTelefone.setText("");
-        CboEspecialidade.getSelectionModel().select(null);
-        TxtEmail.setText("");
-        TxtEndereco.setText("");
-        
-        
-    /*} catch (Exception e) {
-        DiversosJavaFx.exibirMensagem(e.getMessage());
-    }*/
-    }
 
-
-   
+    /**
+     * 
+     */
     private void exibirDados() {
-        Medico medico = listaMedico.getSelectionModel().getSelectedItem();
+        Medico medico  = listaMedico.getSelectionModel().getSelectedItem();
         if (medico==null) return;
 
+
+        TxtNome.setText(medico.getNome());
         TxtCpf.setText(medico.getCpf());
         TxtEmail.setText(medico.getEmail());
         TxtEndereco.setText(medico.getEndereco());
         TxtCRM.setText(medico.getCRM().toString());
-        TxtNome.setText(medico.getNome());
         TxtTelefone.setText(medico.getTelefones().get(0));
         CboEspecialidade.getSelectionModel().select(medico.getEspecialidades());
-
     }
 
     @FXML
     private void BtnExcluir_Click(ActionEvent event) {
         Medico medico = listaMedico.getSelectionModel().getSelectedItem();
-        if (medico==null) return;
+        if (medico ==null) return;
 
         try {
             if (medicoDao.excluir(medico)==false) {
-                DiversosJavaFx.exibirMensagem("Não foi possível excluir o médico selecionado");
+                DiversosJavaFx.exibirMensagem("Não foi possível excluir o cliente selecionado");
             }
         exibirMedicos();
         } catch (Exception e) {
@@ -113,37 +94,38 @@ public class MedicoController implements Initializable {
 
     @FXML
     private void BtnGravar_Click(ActionEvent event) {
-        
-       
         try {
             Medico medico = new Medico(
-                TxtNome.getText(),
-                TxtCRM.getText(),
-                TxtCpf.getText(),
-                TxtTelefone.getText(),
-                CboEspecialidade.getSelectionModel().getSelectedItem());
+                    TxtNome.getText(),
+                    TxtCRM.getText(),                    
+                    TxtCpf.getText(),
+                    TxtTelefone.getText(),
+                    CboEspecialidade.getSelectionModel().getSelectedItem()
+                    );
             medico.setEmail(TxtEmail.getText());
             medico.setEndereco(TxtEndereco.getText());
 
-            
 
             if (medicoDao.gravar(medico)==false) {
-                DiversosJavaFx.exibirMensagem("Não foi possível gravar o médico");
+                DiversosJavaFx.exibirMensagem("Não foi possível gravar o cliente");
                 return;
             }
-
             TxtNome.setText("");
-            TxtCRM.setText("");
             TxtCpf.setText("");
             TxtTelefone.setText("");
-            CboEspecialidade.getSelectionModel().select(null);
             TxtEmail.setText("");
             TxtEndereco.setText("");
-             exibirMedicos();
+            TxtCRM.setText("");
+            CboEspecialidade.getSelectionModel().select(null);
+            
+            
 
+
+            exibirMedicos();   
         } catch (Exception e) {
             DiversosJavaFx.exibirMensagem(e.getMessage());
         }
+
 
     }
 
@@ -158,21 +140,21 @@ public class MedicoController implements Initializable {
         }
         
     }
-    public void exibirEspecialidades() {
-        try {
+    public void exibirEspecialidade(){
+        try{
             ObservableList<Especialidade> data = FXCollections.observableArrayList(
-            especialidadeDao.buscarAtivos()
+                especialidadeDao.buscarAtivos()
             );
             CboEspecialidade.setItems(data);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }        
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }       
     }
 
- 
+ @Override
 public void initialize(URL location, ResourceBundle resource){
     exibirMedicos();
-    exibirEspecialidades();
+    exibirEspecialidade();
    }
 
 }

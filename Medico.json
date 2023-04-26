@@ -1,13 +1,13 @@
 [ {
-  "nome" : "Felipe",
-  "endereco" : "Rua P",
-  "cpf" : "37724915024",
-  "telefones" : [ "22 98765-1234" ],
+  "nome" : "Maria Eduarda",
+  "endereco" : "Rua D",
+  "cpf" : "52284216021",
+  "telefones" : [ "32 98712-3456" ],
   "ativo" : true,
-  "email" : "felipe@medico.com",
+  "email" : "MEduarda@medico.com",
   "especialidades" : {
     "nome" : "Ortopedia",
     "ativo" : true
   },
-  "crm" : "9876"
+  "crm" : "6544"
 } ]
